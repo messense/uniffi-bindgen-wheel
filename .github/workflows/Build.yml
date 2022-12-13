@@ -39,6 +39,8 @@ jobs:
           repository: mozilla/uniffi-rs
           ref: v0.21.0
           path: uniffi-rs
+      - shell: bash
+        run: rm uniffi-rs/rust-toolchain.toml
       - uses: dtolnay/rust-toolchain@stable
       - uses: PyO3/maturin-action@v1
         with:
