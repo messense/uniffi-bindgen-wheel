@@ -44,10 +44,11 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: PyO3/maturin-action@v1
         with:
+          maturin-version: v0.13.7
           working-directory: uniffi-rs/uniffi_bindgen
           target: ${{ matrix.platform.target }}
           manylinux: auto
-          args: --release -o dist
+          args: -b bin --release -o dist
       - name: Upload wheel artifacts
         uses: actions/upload-artifact@v3
         with:
